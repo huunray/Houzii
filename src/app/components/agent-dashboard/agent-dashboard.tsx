@@ -95,18 +95,7 @@ const AgentDashboardInner: React.FC<AgentDashboardProps> = ({ userName, onNaviga
           </div>
         </div>
 
-        {/* Agent badge */}
-        <div className="px-4 pt-4 pb-2">
-          <div className="flex items-center gap-3 px-4 py-3 bg-primary/5 border border-primary/10 rounded-xl">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center text-primary-foreground font-bold text-xs">
-              {userName.charAt(0).toUpperCase()}
-            </div>
-            <div>
-              <p className="text-slate-800 text-xs font-black">{userName}</p>
-              <p className="text-primary text-[10px] font-bold">Independent Agent</p>
-            </div>
-          </div>
-        </div>
+
 
         {/* Nav Items */}
         <nav className="flex-1 px-3 py-4 space-y-1">
