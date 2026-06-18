@@ -1,0 +1,463 @@
+1. Filters Displayed on the Page
+
+These should be quick filters (visible chips) because they are the most commonly used.
+
+BUY
+
+Visible filters:
+
+Price
+Property Type
+Bedrooms
+Land Size
+More Filters
+
+Why these:
+
+Nigerians often search by budget
+
+Bedrooms define family size
+
+Land size is important for buyers
+
+RENT
+
+Visible filters:
+
+Price (Per Year)
+Property Type
+Bedrooms
+Furnished
+More Filters
+
+Why:
+
+Renters care about:
+
+affordability
+
+furnished apartments
+
+number of rooms
+
+SHORTLET
+
+Visible filters:
+
+Check-in
+Check-out
+Guests
+Price per night
+More Filters
+
+Why:
+
+Shortlet decisions depend on:
+
+availability
+
+number of guests
+
+nightly cost
+
+2. More Filters Modal
+
+This opens a modal panel containing advanced filters grouped by category.
+
+BUY — More Filters
+Property Details
+Bathrooms
+Parking spaces
+Property condition
+Newly built
+Land & Documentation
+
+Very important in Nigeria.
+
+Title type
+C of O
+Governor’s Consent
+Excision
+Gazette
+Registered Survey
+Property Features
+Swimming pool
+Balcony
+Boys quarters (BQ)
+Penthouse
+Smart home
+Estate Features
+Gated estate
+24hr security
+Estate management
+Road access
+Drainage
+RENT — More Filters
+Property Details
+Bathrooms
+Parking
+Balcony
+Floor level
+Utilities (very important in Nigeria)
+24hr electricity
+Generator
+Solar power
+Water supply
+Borehole
+Living Conditions
+Serviced apartment
+Furnished
+Pet friendly
+Estate
+Security
+Payment Structure
+
+This is very Nigeria specific.
+
+Annual rent
+Service charge
+Agency fee
+Legal fee
+Caution fee
+SHORTLET — More Filters
+Booking Options
+Instant booking
+Self check-in
+Entire apartment
+Private room
+House Rules
+Events allowed
+Parties allowed
+Smoking allowed
+Pets allowed
+Amenities
+WiFi
+Smart TV
+Air conditioning
+Pool
+Gym
+Parking
+Elevator
+Host Preferences
+Superhost
+Verified host
+Flexible cancellation
+3. Dynamic Filter Behavior
+
+The filter system must change based on the selected tab.
+
+When user clicks BUY
+
+Visible filters become:
+
+Price
+Property Type
+Bedrooms
+Land Size
+More Filters
+
+Listings update to Properties for Sale.
+
+When user clicks RENT
+
+Visible filters change to:
+
+Price (per year)
+Property Type
+Bedrooms
+Furnished
+More Filters
+
+Listings update to Rental properties.
+
+When user clicks SHORTLET
+
+Visible filters change to:
+
+Check-in
+Check-out
+Guests
+Price per night
+More Filters
+
+Listings update to Shortlet listings.
+
+4. Smart Filter UX Behavior
+
+Filters should behave like interactive chips.
+
+Example:
+
+Before selection:
+
+Price
+Bedrooms
+
+After selection:
+
+Price: ₦50M – ₦120M
+Bedrooms: 3+
+
+Add:
+
+Clear All Filters
+5. Scroll Interaction
+
+When users scroll:
+
+The search + filters become sticky.
+
+Sticky bar example:
+
+[Location] [Filters] [Sort] [Map]
+
+This prevents users from scrolling back to refine search.
+
+6. Filter Modal UX
+
+When user clicks More Filters
+
+Open a slide-up modal panel.
+
+Layout:
+
+Category sections
+Checkbox filters
+Range sliders
+Apply button
+Clear filters
+
+Buttons:
+
+Apply Filters
+Clear All
+
+Filters apply instantly.
+
+7. Results Interaction
+
+When filters change:
+
+Results update
+Result count changes
+
+Example:
+
+125 homes for sale in Lekki
+8. Map Interaction
+
+If Show Map is clicked:
+
+Layout becomes:
+
+Listings | Map
+
+Map shows price pins:
+
+₦120M
+₦85M
+₦300M
+
+Hover interactions:
+
+Hover card → highlight map pin
+Hover pin → highlight card
+Complete Prompt to Implement
+
+Use this to implement the system.
+
+Prompt
+
+Design and implement the Houzii Explore Properties page filter system optimized for the Nigerian real estate market.
+
+The page supports three search categories:
+
+Buy
+Rent
+Shortlet
+
+The filters must dynamically change depending on the selected category.
+
+Search Area
+
+Include a search bar with tabs:
+
+Buy
+Rent
+Shortlet
+
+Location search must allow users to search by:
+
+City
+Area
+Estate
+
+Example:
+
+Lekki
+Yaba
+Victoria Island
+Abuja
+
+Visible Filters
+
+Display quick filter chips below the search bar.
+
+Filters change depending on the selected tab.
+
+Buy Filters
+
+Visible chips:
+
+Price
+Property Type
+Bedrooms
+Land Size
+More Filters
+
+Rent Filters
+
+Visible chips:
+
+Price per year
+Property Type
+Bedrooms
+Furnished
+More Filters
+
+Shortlet Filters
+
+Visible chips:
+
+Check-in
+Check-out
+Guests
+Price per night
+More Filters
+
+More Filters Modal
+
+When users click More Filters, open a modal panel with categorized filters.
+
+Buy Modal Filters
+
+Property details:
+
+Bathrooms
+Parking
+Newly built
+
+Land documentation:
+
+C of O
+Governor’s Consent
+Excision
+Gazette
+Registered Survey
+
+Estate features:
+
+Gated estate
+24hr security
+Estate management
+
+Amenities:
+
+Swimming pool
+Balcony
+Boys quarters
+
+Rent Modal Filters
+
+Property details:
+
+Bathrooms
+Parking
+Floor level
+
+Utilities:
+
+24hr electricity
+Generator
+Solar power
+Water supply
+Borehole
+
+Living conditions:
+
+Serviced apartment
+Furnished
+Pet friendly
+
+Payment structure:
+
+Annual rent
+Service charge
+Agency fee
+Legal fee
+
+Shortlet Modal Filters
+
+Booking options:
+
+Instant booking
+Self check-in
+Entire apartment
+
+House rules:
+
+Events allowed
+Smoking allowed
+Pets allowed
+
+Amenities:
+
+WiFi
+Air conditioning
+Pool
+Gym
+Parking
+
+Host preferences:
+
+Superhost
+Verified host
+
+Filter UX Behavior
+
+Filters must display selected values as chips.
+
+Example:
+
+Price: ₦80M – ₦120M
+Bedrooms: 3+
+
+Include a Clear All filters option.
+
+Scrolling Behavior
+
+When users scroll, the search and filter bar becomes sticky.
+
+Sticky bar should include:
+
+Location
+Filters
+Sort
+Map toggle
+
+Map Interaction
+
+Add a Show Map toggle.
+
+When enabled, the layout becomes:
+
+Left side: property listings
+Right side: interactive map
+
+Map pins display property prices.
+
+Hovering cards highlights map pins.
+
+Goal
+
+The Explore page should allow users to quickly search, refine, and discover properties across Nigeria using a fast and intuitive filtering system tailored to Nigerian real estate behavior.

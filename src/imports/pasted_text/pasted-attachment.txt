@@ -1,0 +1,203 @@
+Update the Shortlet (Stay) search tab on the Houzii homepage to follow the Airbnb-style booking search structure, using only three fields:
+
+Where | When | Who
+
+Do not include property type or bedrooms.
+
+Maintain the Houzii design system, including:
+
+rounded search container
+
+soft shadows
+
+clean spacing
+
+modern luxury real estate aesthetic
+
+primary brand color for the search button
+
+Search Layout
+
+Create a single horizontal search container with the following fields:
+
+Where | When | Who | Search Button
+
+Fields should be evenly spaced inside the rounded container.
+
+Field 1 — Where
+
+Label
+Where
+
+Placeholder
+Search destinations
+
+Functionality
+
+Location autocomplete
+
+Suggest cities and neighborhoods
+
+Example suggestions
+
+Lekki
+Victoria Island
+Ikoyi
+Abuja
+Port Harcourt
+
+Field 2 — When
+
+Label
+When
+
+Placeholder
+Add dates
+
+When the user clicks When, open a floating calendar panel below the search bar.
+
+Calendar Panel Design
+
+The calendar panel should appear as a large floating card with soft shadow and rounded corners.
+
+Display:
+
+Two months side by side
+
+Example
+
+March 2026 | April 2026
+
+Include:
+
+month navigation arrows
+
+hover states for dates
+
+disabled past dates
+
+Do not include the Flexible option.
+
+Only allow exact date selection.
+
+Calendar Interaction (Important UX)
+
+Guide the user clearly through selecting check-in and check-out.
+
+Step 1
+User clicks first date.
+
+This automatically becomes:
+
+Check-in
+
+Visually indicate:
+
+"Select checkout date"
+
+Step 2
+User selects second date.
+
+This becomes:
+
+Check-out
+
+Highlight the date range between the two dates.
+
+Example display inside the field:
+
+Mar 12 — Mar 16
+
+Smart UX Feedback
+
+After selecting the first date:
+
+Show helper text inside the calendar:
+
+Select checkout date
+
+After selecting the second date:
+
+Close the calendar automatically.
+
+Update the When field with the selected range.
+
+Field 3 — Who
+
+Label
+Who
+
+Placeholder
+Add guests
+
+When clicked, open a guest selector dropdown.
+
+Guest options:
+
+Adults
+Children
+Infants
+
+Each option includes:
+
+button
+– button
+counter
+
+Example result shown in field:
+
+2 guests
+
+Search Button
+
+Circular search button on the right side of the container.
+
+Search action passes parameters:
+
+location
+
+check-in date
+
+check-out date
+
+guest count
+
+Navigate to the Shortlet results page.
+
+Micro-Interactions
+
+Add subtle animations:
+
+smooth expansion of calendar
+
+date hover highlighting
+
+animated guest selector
+
+smooth closing when selection is complete
+
+Mobile Behavior
+
+On mobile, convert the search interaction into a step-based flow:
+
+Select Where
+
+Select Dates
+
+Select Guests
+
+Each step opens a full screen picker modal.
+
+Visual Tone
+
+Design should feel:
+
+premium
+
+clean
+
+simple
+
+intuitive
+
+inspired by Airbnb UX but styled in Houzii’s brand system.
