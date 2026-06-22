@@ -110,42 +110,31 @@ export const ActivityPanel: React.FC<ActivityPanelProps> = ({ onViewProperty }) 
         </motion.div>
 
         {/* Tabs */}
-        <div className="mt-5 flex gap-2 bg-slate-100 rounded-2xl p-1 h-11">
-          <button
-            onClick={() => setCurrentTab('todo')}
-            className={`flex-1 flex items-center justify-center rounded-xl font-bold text-sm transition-all relative ${
-              currentTab === 'todo'
-                ? 'bg-primary text-white shadow-lg shadow-primary/15'
-                : 'text-slate-400 hover:text-slate-600'
-            }`}
-          >
-            To-Do
-            {currentTab !== 'todo' && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[hsl(var(--escrow-red))] text-white text-[10px] font-black rounded-full flex items-center justify-center">
-                {todoItems.length}
-              </span>
-            )}
-          </button>
-          <button
-            onClick={() => setCurrentTab('offers')}
-            className={`flex-1 flex items-center justify-center rounded-xl font-bold text-sm transition-all ${
-              currentTab === 'offers'
-                ? 'bg-primary text-white shadow-lg shadow-primary/15'
-                : 'text-slate-400 hover:text-slate-600'
-            }`}
-          >
-            Recent Activities
-          </button>
-          <button
-            onClick={() => setCurrentTab('inspections')}
-            className={`flex-1 flex items-center justify-center rounded-xl font-bold text-sm transition-all ${
-              currentTab === 'inspections'
-                ? 'bg-primary text-white shadow-lg shadow-primary/15'
-                : 'text-slate-400 hover:text-slate-600'
-            }`}
-          >
-            Inspections
-          </button>
+        <div className="mt-5 flex gap-1 bg-slate-100 rounded-xl p-1 h-11">
+          {[
+            { id: 'todo' as const, label: 'To-Do', count: todoItems.length },
+            { id: 'offers' as const, label: 'Recent Activities', count: recentActivity.length },
+            { id: 'inspections' as const, label: 'Inspections', count: inspections.length },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setCurrentTab(tab.id)}
+              className={`flex-1 flex items-center justify-center rounded-lg font-bold text-sm transition-all gap-1.5 ${
+                currentTab === tab.id
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-slate-400 hover:text-slate-600'
+              }`}
+            >
+              <span>{tab.label}</span>
+              {tab.count !== undefined && tab.count > 0 && (
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-black ${
+                  currentTab === tab.id ? 'bg-primary/10 text-primary' : 'bg-slate-200 text-slate-400'
+                }`}>
+                  {tab.count}
+                </span>
+              )}
+            </button>
+          ))}
         </div>
       </div>
 

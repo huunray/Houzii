@@ -115,7 +115,7 @@ export const HandoverCard: React.FC<HandoverCardProps> = ({
       </p>
       <button
         onClick={onConfirmHandover}
-        className="mt-4 w-full h-11 bg-[hsl(var(--escrow-green))] text-white rounded-xl font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-md shadow-[hsl(var(--escrow-green))]/20"
+        className="mt-4 h-11 px-6 bg-[hsl(var(--escrow-green))] text-white rounded-xl font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-md shadow-[hsl(var(--escrow-green))]/20 w-fit"
       >
         <Key className="w-4 h-4" />
         Confirm Handover Complete

@@ -228,7 +228,7 @@ export const AgentProfile: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#120C22] to-transparent pointer-events-none" />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
         
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div className="flex items-center gap-5">
             <div className="relative group">
               <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#591C2B] to-[#7B2D42] flex items-center justify-center text-white font-black text-3xl border-4 border-white/20 shadow-xl">
@@ -267,13 +267,13 @@ export const AgentProfile: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 -mt-10 relative z-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 -mt-10 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* ── Left Navigation Sticky Anchor Index Panel ── */}
           <div className="lg:col-span-4 lg:sticky lg:top-6 self-start space-y-4">
             <div className="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm">
-              <h3 className="text-slate-900 font-black text-xs uppercase tracking-wider px-2 mb-4 text-slate-400">Settings Nav Index</h3>
+              <h3 className="text-slate-400 font-black text-xs uppercase tracking-wider px-2 mb-4">Account Settings</h3>
               <nav className="space-y-1">
                 {[
                   { id: 'account-section', label: 'Account Profile', num: '01' },
@@ -293,15 +293,7 @@ export const AgentProfile: React.FC = () => {
                 ))}
               </nav>
 
-              <div className="mt-8 pt-5 border-t border-slate-100 px-2">
-                <p className="text-[10px] font-bold text-slate-450 uppercase tracking-widest leading-relaxed">Central Bank Compliance</p>
-                <div className="mt-2.5 flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-100 p-3 rounded-2xl">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <div className="text-[11px] font-semibold leading-relaxed">
-                    Identity matches Lagos and CBN verification standards perfectly.
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
 
@@ -321,13 +313,6 @@ export const AgentProfile: React.FC = () => {
               </div>
 
               <div className="space-y-6">
-                {/* Visual Lock Notification */}
-                <div className="p-3.5 bg-slate-50/85 rounded-2xl border border-slate-100 flex items-start gap-2.5">
-                  <Lock className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-                  <p className="text-slate-500 text-[11px] font-bold font-sans leading-relaxed">
-                    <strong>Read-only Verification Locks:</strong> To protect buyers and prevent real estate agency credential fraud on Houzii, legal names and registered email inputs must match official state registration records and cannot be directly self-edited.
-                  </p>
-                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Full Name (Read-only Compliance) */}
@@ -535,32 +520,7 @@ export const AgentProfile: React.FC = () => {
                     )}
                   </AnimatePresence>
 
-                  {/* Public Agent Bio */}
-                  <div>
-                    <label className="text-slate-450 text-[10px] font-black uppercase tracking-wider block mb-1.5">Public Agent Bio Summary</label>
-                    <textarea
-                      value={bio}
-                      onChange={(e) => setBio(e.target.value)}
-                      rows={4}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-xs font-bold text-slate-800 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all"
-                    />
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="text-[10px] text-slate-400 font-bold font-sans">Visible to Lagos tenant clients on your home listings</span>
-                      <button
-                        onClick={() => {
-                          setIsSavingBio(true);
-                          setTimeout(() => {
-                            setIsSavingBio(false);
-                            toast.success('Agent bio summary saved successfully!');
-                          }, 1000);
-                        }}
-                        disabled={isSavingBio}
-                        className="px-4 py-1.5 bg-slate-100 hover:bg-primary/5 text-slate-700 hover:text-primary text-[11px] font-black rounded-full transition-all border border-slate-200/50"
-                      >
-                        {isSavingBio ? 'Saving...' : 'Save Bio Change'}
-                      </button>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </section>
@@ -581,17 +541,6 @@ export const AgentProfile: React.FC = () => {
               </div>
 
               <form onSubmit={handleSavePayout} className="space-y-6">
-                {/* Security and compliance note */}
-                <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-100 flex items-start gap-3">
-                  <ShieldAlert className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
-                  <div>
-                    <h4 className="text-emerald-800 font-extrabold text-xs">CBN Anti-Fraud Clearance Standard</h4>
-                    <p className="text-emerald-700 text-[10px] font-medium font-sans mt-0.5 leading-relaxed">
-                      To comply with money laundering audits under the Laws of Lagos State and Central Bank guidelines, the registered payout bank account holder name must matches your verified profile identity (<strong>Adamu Okonkwo</strong>). Settlement redirects to alternative names are strictly blocked.
-                    </p>
-                  </div>
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Bank Name Selector */}
                   <div>

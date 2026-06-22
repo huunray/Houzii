@@ -267,24 +267,26 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
         </motion.div>
 
         {/* Tabs */}
-        <div className="mt-5 flex gap-2 bg-slate-100 rounded-2xl p-1 h-11">
+        <div className="mt-5 flex gap-1 bg-slate-100 rounded-xl p-1 h-11">
           {[
             { id: 'todo' as const, label: 'To-Do', count: deals.length + pendingRequests.length },
-            { id: 'recent' as const, label: 'Recent Activities' },
-            { id: 'inspections' as const, label: 'Inspections' },
+            { id: 'recent' as const, label: 'Recent Activities', count: recentActivities.length },
+            { id: 'inspections' as const, label: 'Inspections', count: confirmedInspections.length },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setCurrentTab(tab.id)}
-              className={`flex-1 flex items-center justify-center rounded-xl font-bold text-sm transition-all relative ${
+              className={`flex-1 flex items-center justify-center rounded-lg font-bold text-sm transition-all gap-1.5 ${
                 currentTab === tab.id
-                  ? 'bg-primary text-white shadow-lg shadow-primary/15'
+                  ? 'bg-white text-primary shadow-sm'
                   : 'text-slate-400 hover:text-slate-600'
               }`}
             >
-              {tab.label}
-              {tab.count && currentTab !== tab.id && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[hsl(var(--escrow-red))] text-white text-[10px] font-black rounded-full flex items-center justify-center">
+              <span>{tab.label}</span>
+              {tab.count !== undefined && tab.count > 0 && (
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-black ${
+                  currentTab === tab.id ? 'bg-primary/10 text-primary' : 'bg-slate-200 text-slate-400'
+                }`}>
                   {tab.count}
                 </span>
               )}
@@ -426,7 +428,7 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
                       <div className="px-5 pb-5">
                         <button
                           onClick={() => setSelectedRequest(req)}
-                          className="w-full h-11 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                          className="h-11 px-6 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 w-fit"
                         >
                           Respond to Request
                           <ArrowRight className="w-4 h-4" />
@@ -525,7 +527,7 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
                         </p>
                         <button
                           onClick={() => handleAcknowledge(deal)}
-                          className="h-11 px-6 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2"
+                          className="h-11 px-6 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2 w-fit"
                         >
                           <CheckCircle2 className="w-4 h-4" />
                           Acknowledge Payment
@@ -543,7 +545,7 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
                         </p>
                         <button
                           onClick={() => handlePrepareDocuments(deal)}
-                          className="h-11 px-6 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2"
+                          className="h-11 px-6 bg-primary hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2 w-fit"
                         >
                           <FileCheck className="w-4 h-4" />
                           {deal.pipeline === 'rental' ? 'Prepare Handover & Documents' : 'Initiate Title Transfer'}
@@ -557,7 +559,7 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
                         <p className="text-slate-500 text-xs font-medium mb-3">
                           Documents submitted. Awaiting final walkthrough and key handover.
                         </p>
-                        <button onClick={() => handleScheduleWalkthrough(deal)} className="h-11 px-6 border-2 border-primary text-primary hover:bg-primary/5 rounded-full font-bold text-sm transition-all active:scale-[0.98] flex items-center gap-2">
+                        <button onClick={() => handleScheduleWalkthrough(deal)} className="h-11 px-6 border-2 border-primary text-primary hover:bg-primary/5 rounded-full font-bold text-sm transition-all active:scale-[0.98] flex items-center gap-2 w-fit">
                           <Calendar className="w-4 h-4" />
                           Schedule Final Walkthrough
                           <ArrowRight className="w-4 h-4" />
@@ -572,7 +574,7 @@ export const AgentActivity: React.FC<AgentActivityProps> = ({ deals: transaction
                         </p>
                         <button
                           onClick={() => handleHandoverComplete(deal)}
-                          className="h-11 px-6 bg-[hsl(var(--escrow-green))] hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-[hsl(var(--escrow-green))]/20 transition-all active:scale-[0.98] flex items-center gap-2"
+                          className="h-11 px-6 bg-[hsl(var(--escrow-green))] hover:brightness-110 text-white rounded-full font-bold text-sm shadow-md shadow-[hsl(var(--escrow-green))]/20 transition-all active:scale-[0.98] flex items-center gap-2 w-fit"
                         >
                           <CheckCircle2 className="w-4 h-4" />
                           Handover Complete

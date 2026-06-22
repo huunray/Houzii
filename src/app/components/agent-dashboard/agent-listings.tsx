@@ -339,12 +339,7 @@ export const AgentListings: React.FC = () => {
                               <ShieldCheck className="w-3.5 h-3.5" /> Request Title Check
                             </button>
                           )}
-                          <button
-                            onClick={() => setMarketingSheet(listing.id)}
-                            className="px-4 py-2 bg-primary/10 text-primary rounded-xl text-xs font-bold hover:bg-primary/20 transition-colors flex items-center gap-1"
-                          >
-                            <Share2 className="w-3.5 h-3.5" /> Marketing
-                          </button>
+
                           {listing.status === 'closed' && (
                             <button
                               onClick={() => setCommandListing(listing)}
